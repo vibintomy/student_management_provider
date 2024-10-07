@@ -5,7 +5,7 @@ const kheight =  SizedBox(
   height: 30,
 );
 
-const width =  SizedBox(
+const kwidth =  SizedBox(
   width: 10,
 );
 

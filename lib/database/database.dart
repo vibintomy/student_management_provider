@@ -1,4 +1,3 @@
-
 import 'package:sqflite/sqflite.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
@@ -64,5 +63,29 @@ class DatabaseHelper {
             age: maps[index][columnAge],
             phone: maps[index][columnPhone],
             profileimg: maps[index][columnProfileimg]));
+  }
+
+  Future<int> deleteStudent(int id) async {
+    final db = await database;
+    return await db.delete(
+      table,
+      where: '$columnId=?',
+      whereArgs: [id],
+    );
+  }
+
+  Future<int> updateStudent(Student student) async {
+    final db = await database;
+    return db.update(table, {
+      columnName:student.name,
+      columnSchool:student.school,
+      columnAge:student.age,
+      columnPhone:student.phone,
+      columnProfileimg:student.profileimg
+
+    },
+     where: '$columnId=?',
+      whereArgs: [student.id],
+    );
   }
 }
