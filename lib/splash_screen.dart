@@ -19,10 +19,11 @@ class SplashScreen extends StatelessWidget {
           width: double.infinity,
           decoration: maincolor,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('STUDENT MANAGEMENT',
               style: GoogleFonts.dancingScript(
-                color: Colors.grey,
+                color: Colors.blueGrey,
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),),
