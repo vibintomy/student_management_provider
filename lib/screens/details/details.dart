@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:student_management_provider/core/colors.dart';
 import 'package:student_management_provider/model/model.dart';
+import 'package:student_management_provider/screens/details/button_widget.dart';
+import 'package:student_management_provider/screens/details/image_widget.dart';
 import 'package:student_management_provider/widgets/widget.dart';
 
 class StudentDetails extends StatelessWidget {
@@ -26,7 +29,52 @@ class StudentDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 kheight,
-                
+                ImageWidget(student: student),
+                kheight,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 320,
+                      width:200,
+                      decoration:const BoxDecoration(
+                        color: Color.fromARGB(255, 165, 245, 168),
+                        borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(5),
+                          topRight: Radius.circular(5),
+                          
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black,
+                            blurRadius: 20,
+                            offset: Offset(0, 5),
+                          )
+                        ],
+                        
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 50),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Name: ${student.name}',
+                            style:   styledetails(),),
+                              Text('School: ${student.school}',
+                            style:   styledetails(),),
+                            Text('Age: ${student.age}',
+                            style:   styledetails(),),
+                              Text('Phone: ${student.phone}',
+                            style:   styledetails(),),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                kheight1,
+               ButtonWidget(student: student)
               ],
             ),
           ),
@@ -34,4 +82,10 @@ class StudentDetails extends StatelessWidget {
       ),
     );
   }
+
+  TextStyle styledetails()=> GoogleFonts.crimsonPro(
+    fontSize: 17,
+    color: Colors.black,
+    fontWeight: FontWeight.w600
+  );
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:student_management_provider/model/model.dart';
 
@@ -15,25 +17,46 @@ class ImageWidget extends StatelessWidget {
               width: 300,
               height:300,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color.fromARGB(255, 183, 253, 185),
                 borderRadius: BorderRadius.circular(80),
-                boxShadow: [BoxShadow(
+                boxShadow:const [BoxShadow(
                   color: Colors.black,
                   blurRadius: 20,
                     offset: Offset(0, 5)
                 )]
               ),
             ),
-            Padding(padding: EdgeInsets.only(top: 20,bottom: 20,left: 115),
+            Padding(padding:const EdgeInsets.only(top: 20,bottom: 20,left: 115),
             child: student.profileimg.isNotEmpty
             ? Container(
               height: 160,
               width: 160,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only()
+                borderRadius:const BorderRadius.only(
+                  topRight: Radius.circular(60),
+                  bottomLeft: Radius.circular(60),
+                  topLeft: Radius.circular(60),
+                  
+                ),
+                image:DecorationImage(image: 
+                FileImage(File(student.profileimg)),
+                fit: BoxFit.cover)
               ),
             )
-            :Container()
+            :Container(
+              height: 160,
+              width: 160,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(60),
+                  bottomLeft: Radius.circular(60),
+                  topLeft: Radius.circular(60),
+                  
+                ),
+                color: Colors.cyan
+              ),
+              child:const Icon(Icons.person),
+            )
             )
             
           ],

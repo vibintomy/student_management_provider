@@ -7,4 +7,4 @@ BoxDecoration maincolor = const BoxDecoration(
   end: Alignment.bottomCenter,
 ));
 
-Color color1 = Color.fromARGB(255, 39, 183, 245);
+const Color color1 = Color.fromARGB(255, 39, 183, 245);
