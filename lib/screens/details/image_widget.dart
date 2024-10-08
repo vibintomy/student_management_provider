@@ -17,7 +17,7 @@ class ImageWidget extends StatelessWidget {
               width: 300,
               height:300,
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 183, 253, 185),
+                color:const Color.fromARGB(255, 183, 253, 185),
                 borderRadius: BorderRadius.circular(80),
                 boxShadow:const [BoxShadow(
                   color: Colors.black,
