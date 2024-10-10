@@ -40,7 +40,7 @@ class StudentEdit extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: maincolor,
+        decoration: maincolor1,
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(15),

@@ -14,9 +14,11 @@ class HomePageProvider extends ChangeNotifier {
 
   Future<void> refreshStudentList() async {
     final studentList = await databaseHelper.getStudent();
-    students = studentList;
-    filteredStudents = studentList;
-    notifyListeners();
+    if (studentList.isNotEmpty) {
+      students = studentList;
+      filteredStudents = studentList;
+      notifyListeners();
+    }
   }
 
   void toggleSearch() {
@@ -31,10 +33,9 @@ class HomePageProvider extends ChangeNotifier {
     if (query.isEmpty) {
       filteredStudents = students;
     } else {
-      filteredStudents = students
-          .where((student) =>
-              student.name.toLowerCase().contains(query.toLowerCase()))
-          .toList();
+      filteredStudents = students.where((student) {
+        return student.name.toLowerCase().contains(query.toLowerCase());
+      }).toList();
     }
     notifyListeners();
   }

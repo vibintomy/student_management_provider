@@ -7,4 +7,12 @@ BoxDecoration maincolor = const BoxDecoration(
   end: Alignment.bottomCenter,
 ));
 
+
+BoxDecoration maincolor1 = const BoxDecoration(
+    gradient: LinearGradient(
+  colors: [Colors.white, Color.fromARGB(255, 202, 216, 241)],
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+));
+
 const Color color1 = Color.fromARGB(255, 39, 183, 245);

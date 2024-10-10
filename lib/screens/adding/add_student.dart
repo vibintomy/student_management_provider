@@ -33,7 +33,7 @@ class AddStudent extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: maincolor,
+        decoration: maincolor1,
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(15),
@@ -68,7 +68,7 @@ class AddStudent extends StatelessWidget {
                                 width: 150,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
-                                  color: const Color.fromARGB(255, 91, 222, 208),
+                                  color:const Color.fromARGB(255, 244, 153, 238),
                                 ),
                                 child: const Icon(Icons.person),
                               ),
@@ -125,6 +125,9 @@ class AddStudent extends StatelessWidget {
                           }),
                       kheight,
                       ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:const Color.fromARGB(255, 246, 177, 172)
+                        ),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               final name = nameController.text;

@@ -22,7 +22,7 @@ class StudentDetails extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: maincolor,
+        decoration: maincolor1,
         child: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -38,7 +38,7 @@ class StudentDetails extends StatelessWidget {
                       height: 320,
                       width:200,
                       decoration:const BoxDecoration(
-                        color: Color.fromARGB(255, 165, 245, 168),
+                        color: Color.fromARGB(255, 245, 165, 213),
                         borderRadius: BorderRadius.only(
                           bottomRight: Radius.circular(5),
                           topRight: Radius.circular(5),
