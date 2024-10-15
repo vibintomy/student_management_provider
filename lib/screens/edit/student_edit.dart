@@ -145,7 +145,8 @@ class StudentEdit extends StatelessWidget {
                                    const SnackBar(
                                         content: Text(
                                             'Student Updated successfuly')));
-                                Navigator.pop(context);
+                                             Provider.of<HomePageProvider>(context, listen: false).refreshStudentList();
+                                Navigator.pop(context,studentupdate);
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                 const    SnackBar(
@@ -154,9 +155,9 @@ class StudentEdit extends StatelessWidget {
                               }
                             });
                           }
-                          editStudentProvider.clearImage();
-                          HomePageProvider homeprovider = HomePageProvider();
-                          homeprovider.refreshStudentList();
+                          // editStudentProvider.clearImage();
+                          // HomePageProvider homeprovider = HomePageProvider();
+                          // homeprovider.refreshStudentList();
 
                         },
                         child:const Row(

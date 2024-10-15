@@ -17,8 +17,11 @@ class HomePageProvider extends ChangeNotifier {
     if (studentList.isNotEmpty) {
       students = studentList;
       filteredStudents = studentList;
-      notifyListeners();
+    } else {
+      students = [];
+      filteredStudents = [];
     }
+    notifyListeners();
   }
 
   void toggleSearch() {

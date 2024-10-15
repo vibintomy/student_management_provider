@@ -77,7 +77,7 @@ class ButtonWidget extends StatelessWidget {
               Navigator.pop(context);
             }, ondelete: () {
               Provider.of<DetailsPageProvider>(context, listen: false)
-                  .deleteStudent(student.id);
+                  .deleteStudent(student.id,context);
               void popUntilHomeScreen(BuildContext context) {
                 Navigator.popUntil(context, (route) => route.isFirst);
               }
